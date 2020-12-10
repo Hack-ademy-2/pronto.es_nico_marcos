@@ -22,3 +22,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [PublicController::class, 'index'])->name('home');
+
+Route::get('/announcement/new', [PublicController::class,'newAnnouncement'])->name('announcement.new');

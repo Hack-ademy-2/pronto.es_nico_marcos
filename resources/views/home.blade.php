@@ -7,7 +7,7 @@
         <h1><u>¡Véndelo</u> más pronto que tarde!</h1>
         <p>Saca lo que no usas. Házle una foto y véndelo. <u><br>¡Y si no te lo compran te lo compramos nosotros!</u></p>
         <p>
-          <a href="#" class="btn btn-primary my-2">Subir un producto</a>
+          <a href={{route("announcement.new")}} class="btn btn-primary my-2">Subir un producto</a>
           <a href="#" class="btn btn-secondary my-2">Pedir precio por mi producto.</a>
         </p>
       </div>
