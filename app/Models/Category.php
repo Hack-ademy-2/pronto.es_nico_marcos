@@ -2,16 +2,17 @@
 
 namespace App\Models;
 
-use App\Models\Category;
+use App\Models\Announcement;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Announcement extends Model
+class Category extends Model
 {
     use HasFactory;
 
-    public function category()
+    public function announcements()
     {
-        return $this->belongsTo(Category::class);
+        return $this->hasMany(Announcement::class);
     }
+
 }
