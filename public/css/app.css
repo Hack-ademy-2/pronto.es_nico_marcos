@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
@@ -34,7 +34,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito", sans-serif;
+  --font-family-sans-serif: "Didact Gothic", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -66,7 +66,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Didact Gothic", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -6374,7 +6374,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Didact Gothic", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -6499,7 +6499,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Didact Gothic", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -10901,5 +10901,133 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+:root {
+  --main-color: black;
+  --primary-color: white;
+  --secondary-color: #8b8b8b;
+  --accent-color: #D4A518;
+  --swicth-color: #e9e9e9;
+}
+
+.text-main {
+  color: var(--main-color);
+}
+
+.text-pri {
+  color: var(--primary-color);
+}
+
+.text-sec {
+  color: var(--secondary-color);
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.text-switch {
+  color: var(--swicth-color);
+}
+
+.bg-pri {
+  background-color: #2e2b2b;
+}
+
+.borderFade {
+  padding-bottom: 8px;
+  color: #1b202d;
+  position: relative;
+}
+
+.borderFade::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  transform: translateY(3px);
+  background: var(--accent-color);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.borderFade:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bg-nav {
+  background-color: #D8D8D8;
+}
+
+/* to do responsive navbar */
+
+.masthead {
+  height: 100vh;
+  min-height: 500px;
+  background: linear-gradient(180deg, rgba(236, 236, 236, 0.7889530812) 0%, #cfcfcf 0%, rgba(38, 53, 57, 0) 24%), url("/img/Group 3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.call-to-action {
+  position: absolute;
+  top: 200px;
+  left: 80px;
+}
+
+/* to do mediaquery on call-to-action */
+
+.box-photo1 {
+  height: 250px;
+  width: 200px;
+  background-image: url("/img/marcos.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.7;
+  filter: grayscale(100%);
+  /*   margin-right: 30px; */
+}
+
+.box-photo2 {
+  height: 250px;
+  width: 200px;
+  background-image: url("/img/nico.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.7;
+  filter: grayscale(100%);
+}
+
+.fields-form-border {
+  border-bottom: 2px solid #e2e2e2 !important;
+}
+
+.submit-btn {
+  padding: 10px 50px;
+  background-color: var(--accent-color);
+  border: none;
+  color: var(--main-color);
+  box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.36);
+}
+
+.label-custum {
+  font-size: 13px;
+  color: var(--secondary-color);
+}
+
+.bg-footer {
+  background-color: #131313;
 }
 

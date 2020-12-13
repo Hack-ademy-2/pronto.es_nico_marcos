@@ -1,0 +1,132 @@
+body{
+  background-color: #f0f0f0;
+}
+
+:root {
+  --main-color: black;
+  --primary-color: white;
+  --secondary-color: #8b8b8b;
+  --accent-color: #D4A518;
+  --swicth-color: #e9e9e9;
+}
+
+.text-main {
+  color: var(--main-color);
+}
+
+.text-pri {
+  color: var(--primary-color);
+}
+
+.text-sec {
+  color: var(--secondary-color);
+}
+
+.text-accent{
+  color: var(--accent-color);
+}
+
+.text-switch{
+  color: var(--swicth-color);
+}
+
+.bg-pri{
+  background-color: rgb(46, 43, 43);
+}
+
+.borderFade {
+  padding-bottom: 8px;
+  color: hsl(222, 25%, 14%);
+  position: relative;
+}
+
+.borderFade::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  transform: translateY(3px);
+  background: var(--accent-color);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.borderFade:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.bg-nav{
+  background-color: #D8D8D8;
+}
+/* to do responsive navbar */
+
+
+.masthead {
+  height: 100vh;
+  min-height: 500px;
+  background: linear-gradient(180deg, rgba(236,236,236,0.788953081232493) 0%, rgba(207,207,207,1) 0%, rgba(38,53,57,0) 24%), url('/img/Group 3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.call-to-action{
+  position: absolute;
+  top: 200px;
+  left: 80px;
+}
+
+/* to do mediaquery on call-to-action */
+
+
+
+
+.box-photo1{
+  height: 250px;
+  width: 200px;
+  background-image: url('/img/marcos.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.7;
+  filter: grayscale(100%);
+/*   margin-right: 30px; */
+}
+
+
+.box-photo2{
+  height: 250px;
+  width: 200px;
+  background-image: url('/img/nico.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.7;
+  filter: grayscale(100%);
+}
+
+.fields-form-border{
+  border-bottom: 2px solid rgb(226, 226, 226) !important;
+}
+
+.submit-btn{
+  padding: 10px 50px;
+  background-color: var(--accent-color);
+  border: none;
+  color: var(--main-color);
+  box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.36);
+}
+
+.label-custum{
+  font-size: 13px;
+  color: var(--secondary-color);
+}
+
+.bg-footer{
+  background-color: rgb(19, 19, 19);
+}
