@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PublicController extends Controller
 {
@@ -17,7 +18,8 @@ class PublicController extends Controller
 
     public function index()
     {
-        return view('home');
+        $announcements = Announcement::orderBy('created_at','desc')->take(5)->get();
+        return view('home',compact('announcements'));
     }
 
     public function newAnnouncement()
@@ -31,6 +33,8 @@ class PublicController extends Controller
         $a->title = $request->input('title');
         $a->body = $request->input('body');
         $a->category_id = $request->input('category');
+        $a->price = $request->input('price');
+        $a->user_id = Auth::id();
         $a->save();
         return redirect()->route('home');
 

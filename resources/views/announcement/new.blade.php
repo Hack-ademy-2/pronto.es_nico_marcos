@@ -44,6 +44,14 @@
               <label for="announcementBody" class="form-label">Descripción</label>
               <textarea class="form-control" cols="20" rows="5" name="body"></textarea>
             </div>
+
+            <div class="mb-3">
+                <label for="announcementPrice">Precio</label>
+                <input type="number" step="0.01" class="form-control" id="announcementPrice" aria-describedby="priceHelp" name="price" value="{{old("price")}}">
+                @error('price')
+                <small id="priceHelp" class="form-text" style="color:red;">{{ $message }}</small>
+                @enderror
+            </div>
             
             <button type="submit" class="btn btn-primary">Subir producto</button>
           </form>
