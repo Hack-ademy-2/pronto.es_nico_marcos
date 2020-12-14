@@ -18,16 +18,31 @@
         <div class="col-md-7 col-lg-8">
           <h4 class="mb-3">¿Qué vendes?</h4>
 
-          <form>
+          <form method="POST" action="{{route('announcement.create')}}">
+
+            @csrf
+            
             <div class="mb-3">
-              <label for="Título" class="form-label">Título</label>
-              <input type="text" class="form-control" id="título" aria-describedby="Título">
+              
+              <label for="categories">Categorias</label>
+              <select class="form-control" id="categories"  name="category">
+                  @foreach ($categories as $category)
+                  <option value="{{$category->id}}" 
+                          {{old('category') == $category->id ? 'selected'               : ''}}
+                      >{{$category->name}}</option>
+                  @endforeach
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="announcementName" class="form-label">Título</label>
+              <input type="text" class="form-control" id="announcementName" aria-describedby="Título" name="title">
               <div id="emailHelp" class="form-text">Pon un nombre chulo a tu producto.</div>
             </div>
             
             <div class="mb-3">
-              <label for="body" class="form-label">Descripción</label>
-              <textarea class="form-control" cols="20" rows="5"></textarea>
+              <label for="announcementBody" class="form-label">Descripción</label>
+              <textarea class="form-control" cols="20" rows="5" name="body"></textarea>
             </div>
             
             <button type="submit" class="btn btn-primary">Subir producto</button>

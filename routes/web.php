@@ -24,3 +24,5 @@ Auth::routes();
 Route::get('/home', [PublicController::class, 'index'])->name('home');
 
 Route::get('/announcement/new', [PublicController::class,'newAnnouncement'])->name('announcement.new');
+
+Route::post('/announcement/create', [PublicController::class, 'createAnnouncement'])->name('announcement.create');
