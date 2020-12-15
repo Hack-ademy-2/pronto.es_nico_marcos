@@ -8,9 +8,10 @@
         <div class="col-12">
           <div class="call-to-action">
             <h1 class="text-main text-main" style="font-size: 60px; font-weight: 700;">Pronto</h1>
-            <p class="lead text-main mt-4 text-sec" style="font-size: 18px;">Lorem ipsum dolor sit amet consectetur
-              Adipisci qui dolor iste? Temporibus. <br>
+            <p class="lead text-main mt-4 text-sec" style="font-size: 18px;">Saca la cámara y haz una foto.
+              ¡Ya estás más cerca de venderlo!
             </p>
+            <p class="lead text-sec mt-2s">Subé en un "tris" té, o todo lo que te haga ganar dinero.</p>
           <a href="{{ route('announcement.new')}}" class="text-decoration-none text-reset"><button class="submit-btn btn rounded-0 mt-3" style="font-size: 15px;">sube un anuncio</button></a>
           </div>
         </div>
@@ -19,53 +20,7 @@
     </div>
   </header>
 
-<section id="anuncios">
 
-  <div class="container">
-    <div class="row">
-      
-      <div class="col-12">
-
-              @foreach($announcements as $announcement)
-              <div class="row my-3">
-                  <div class="col-12 col-md-8 offset-md-2">
-                      <div class="card">
-                          <div class="card-header">
-                              {{$announcement->title}}
-                          </div>
-                          <div class="car-body d-flex">
-                              <img src="https://via.placeholder.com/150" alt="">
-                              <p>
-                              {{$announcement->body}}
-                              </p>
-
-                          </div>
-
-                          <div>
-                          <p>{{$announcement->price}}</p>
-                          </div>
-
-
-                          <div class="card-footer d-flex justify-content-between">
-                          <strong>Categoria: <a href="#">{{$announcement->category->name}}</a></strong>
-                          <i>{{$announcement->created_at->format('d/m/Y')}} - {{$announcement
-                          ->user->id}}</i>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              @endforeach
-
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-
-</section>
 
   <div class="container my-5 py-5">
     <div class="row">
@@ -124,6 +79,35 @@
     </div>
   </div>
 
+
+  <section id="anuncios">
+    <div class="container my-3 py-3">
+                <h4 class="text-accent">Echale un vistazo a los ultimos anuncios</h4>
+                <p class="text-sec text-right">las razones porque nuestros productos son de calidad</p>
+
+                <div class="row mt-5">
+                  @foreach($announcements as $announcement)
+                    <div class="col-12 col-md-3 mb-3">
+                        
+                          <div class="card rounded-0 border-0" style="width: 16rem;">
+                            <img src="https://via.placeholder.com/150" class="card-img-top rounded-0 border-0" alt="...">
+                            <div class="card-body bg-pri">
+                              <h5 class="card-title text-sec">{{$announcement->title}}</h5>
+                            <p class="card-text text-switch">{{$announcement->body}} <br> {{ $announcement->price }}€</p>
+                             {{--  <div class="card-footer d-flex justify-content-between">
+                                <strong>Categoria: <a href="#">{{$announcement->category->name}}</a></strong>
+                                <i>{{$announcement->created_at->format('d/m/Y')}} - {{$announcement
+                                ->user->name}}</i>
+                              </div>  --}}
+                              <div class="d-flex align-items-center">
+                                <button class="btn rounded-0 border-0 btn-descover"><a href="#" class="text-sec text-decoration-none">descube más</a></button><i class="fas fa-long-arrow-alt-right arrowScrollDown"></i>
+                              </div>
+                            </div>
+                          </div>
+                  </div>
+                @endforeach
+    </div>
+  </section>
 
   <div class="container-fluid bg-pri">
     <div class="container my-5 py-5">

@@ -10912,7 +10912,7 @@ body {
   --primary-color: white;
   --secondary-color: #8b8b8b;
   --accent-color: #D4A518;
-  --swicth-color: #e9e9e9;
+  --swicth-color: #d1d1d1;
 }
 
 .text-main {
@@ -11029,5 +11029,55 @@ body {
 
 .bg-footer {
   background-color: #131313;
+}
+
+.btn-descover {
+  border-bottom: 1px solid var(--accent-color) !important;
+}
+
+.arrowScrollDown {
+  -webkit-animation: arrowAnimation 1.5s infinite ease-out;
+          animation: arrowAnimation 1.5s infinite ease-out;
+  color: var(--accent-color);
+}
+
+@-webkit-keyframes arrowAnimation {
+  0% {
+    transform: translateX(-5px);
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+}
+
+@keyframes arrowAnimation {
+  0% {
+    transform: translateX(-5px);
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(10px);
+    opacity: 0;
+  }
 }
 
