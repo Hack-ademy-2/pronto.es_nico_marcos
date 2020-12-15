@@ -93,12 +93,10 @@
                             <img src="https://via.placeholder.com/150" class="card-img-top rounded-0 border-0" alt="...">
                             <div class="card-body bg-pri">
                               <h5 class="card-title text-sec">{{$announcement->title}}</h5>
-                            <p class="card-text text-switch">{{$announcement->body}} <br> {{ $announcement->price }}€</p>
-                             {{--  <div class="card-footer d-flex justify-content-between">
-                                <strong>Categoria: <a href="#">{{$announcement->category->name}}</a></strong>
-                                <i>{{$announcement->created_at->format('d/m/Y')}} - {{$announcement
-                                ->user->name}}</i>
-                              </div>  --}}
+                            <p class="card-text text-switch">{{$announcement->body}} <br> {{ $announcement->price }}€ <br>  Categoria: <a href="{{route('announcement.category',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{$announcement->category->name}}</a> <br>
+                            <span>{{$announcement->created_at->format('d/m/Y')}} - {{$announcement
+                              ->user->name}} </span>
+                            </p>
                               <div class="d-flex align-items-center">
                                 <button class="btn rounded-0 border-0 btn-descover"><a href="#" class="text-sec text-decoration-none">descube más</a></button><i class="fas fa-long-arrow-alt-right arrowScrollDown"></i>
                               </div>

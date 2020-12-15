@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -38,5 +39,12 @@ class PublicController extends Controller
         $a->save();
         return redirect()->route('home');
 
+    }
+
+    public function announcementsByCategory($name, $category_id)
+    {
+        $category = Category::find($category_id);
+        $announcements = $category->announcements()->orderBy('created_at','desc')->paginate(5);
+        return view('announcement.category', compact('category', 'announcements'));
     }
 }

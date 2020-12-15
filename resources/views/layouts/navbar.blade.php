@@ -8,9 +8,20 @@
     <a class="nav-link text-decoration-none text-pri" href="{{ route('announcement.new') }}">
         <span class="borderFade" style="font-size: 13px;">subir anuncio</span>
       </a>
-      <a class="nav-link text-decoration-none text-pri" href="#">
-        <span class="borderFade" style="font-size: 13px;"> categorias</span>
-      </a>
+     
+        <a id="navbarDropdown" class="nav-link dropdown-toggle text-reset" href="#" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre> 
+            <span class="borderFade" style="font-size: 13px;"> categorias</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right rounded-0 border-0" aria-labelledby="navbarDropdown">
+                @foreach($categories as $category)
+                <a class="dropdown-item" href="{{route('announcement.category',['name'=>$category->name,'id'=>$category->id])}}">
+                    {{$category->name}}
+                </a>
+                @endforeach
+            </div>
+        
+   
       <a class="nav-link text-decoration-none text-pri" href="#">
         <span class="borderFade" style="font-size: 13px;">sobre nosotros</span>
       </a>
