@@ -19,6 +19,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @stack('style')
 </head>
 <body>
     <div id="app">
@@ -32,7 +33,9 @@
     @include('layouts.footer')
 
  <!-- Scripts -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
  <script src="{{ asset('js/app.js') }}"></script>
 
+ @stack('scripts')
 </body>
 </html>

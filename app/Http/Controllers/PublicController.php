@@ -37,8 +37,13 @@ class PublicController extends Controller
         $a->price = $request->input('price');
         $a->user_id = Auth::id();
         $a->save();
-        return redirect()->route('home');
+        return redirect()->route('thankyou');
 
+    }
+
+    public function thankyou()
+    {
+        return view('thankyou');
     }
 
     public function announcementsByCategory($name, $category_id)

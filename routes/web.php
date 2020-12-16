@@ -28,4 +28,6 @@ Route::get('/announcement/new', [PublicController::class,'newAnnouncement'])->na
 
 Route::post('/announcement/create', [PublicController::class, 'createAnnouncement'])->name('announcement.create');
 
+Route::get('/thankyou', [PublicController::class,'thankyou'])->name('thankyou');
+
 Route::get('/category/{name}/{id}/announcement', [PublicController::class,'announcementsByCategory'])->name('announcement.category');

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('content')
 
 <div class="container mt-5">
@@ -28,7 +29,7 @@
               <select class="form-control" id="categories"  name="category">
                   @foreach ($categories as $category)
                   <option value="{{$category->id}}" 
-                          {{old('category') == $category->id ? 'selected'               : ''}}
+                          {{old('category') == $category->id ? 'selected' : ''}}
                       >{{$category->name}}</option>
                   @endforeach
               </select>
@@ -53,15 +54,13 @@
                 @enderror
             </div>
             
-            <button type="submit" class="btn btn-primary">Subir producto</button>
+            <button id="subirAnuncio" type="submit" class="btn btn-primary">Subir producto</button>
           </form>
 
         
         </div>
       </div>
     </main>
-  
-
-
 
 @endsection
+
